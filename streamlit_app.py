@@ -62,7 +62,7 @@ def insrt_fruit(fruit_name):
     my_cur.excute("insert into fruit_load_list values('"+ fruit_name +"')")
     return "Thanks for adding "+fruit_name
   
-add_fruit= streamlit.text_input('What fruit would like to add?')
+fruit_name= streamlit.text_input('What fruit would like to add?')
 if streamlit.button('Add fruit to the list'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   bach_from_function = insrt_fruit(fruit_name)
